@@ -33,11 +33,7 @@ const Login = () => {
               <hr className="border-t-2 w-full inline" />
             </div>
             <div className="flex justify-center">
-              {/* <a href="#" className="flex gap-2">
-                <IconBrandGoogleFilled />
-                <p>Log in with Google</p>
-              </a> */}
-              <Link to="/register" className="flex gap-2">
+              <Link to="#" className="flex gap-2">
                 <IconBrandGoogleFilled />
                 <p>Log in with Google</p>
               </Link>
@@ -47,9 +43,12 @@ const Login = () => {
         <div className="border-2 mt-3 py-5">
           <p className="text-sm text-slate-600 text-center">
             Don't have an account?{" "}
-            <span className="text-sky-500 font-semibold cursor-pointer">
+            <Link
+              to="/register"
+              className="text-sky-500 font-semibold cursor-pointer"
+            >
               Sign up
-            </span>
+            </Link>
           </p>
         </div>
       </div>
