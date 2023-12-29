@@ -2,6 +2,7 @@ import { IconBrandGoogleFilled } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import AppLogo from "@/utils/AppLogo";
 
 const Login = () => {
   return (
@@ -9,9 +10,7 @@ const Login = () => {
       <div className="w-[75%] max-w-[20rem]">
         <div className="flex flex-col items-center  border-2 py-5 mt-10">
           <div className="flex flex-col items-center w-[75%]">
-            <h1 className="uppercase tracking-[0.2em] font-bold text-2xl m-8">
-              voxels
-            </h1>
+            <AppLogo />
             <form className="flex flex-col items-center gap-2 text-sm w-full">
               <Input
                 // className="border p-2 rounded-sm w-full"
