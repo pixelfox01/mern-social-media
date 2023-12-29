@@ -1,5 +1,7 @@
 import { IconBrandGoogleFilled } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const Login = () => {
   return (
@@ -11,19 +13,19 @@ const Login = () => {
               voxels
             </h1>
             <form className="flex flex-col items-center gap-2 text-sm w-full">
-              <input
-                className="border p-2 rounded-sm w-full"
+              <Input
+                // className="border p-2 rounded-sm w-full"
                 type="text"
                 placeholder="Email"
               />
-              <input
-                className="border p-2 rounded-sm w-full"
+              <Input
+                // className="border p-2 rounded-sm w-full"
                 type="password"
                 placeholder="Password"
               />
-              <button className="rounded-md bg-sky-500 text-white w-full mt-2 py-2 font-semibold">
+              <Button className="rounded-md bg-sky-500 text-white w-full mt-2 py-2 font-semibold">
                 Log in
-              </button>
+              </Button>
             </form>
             <div className="flex justify-between w-full items-center my-3">
               <hr className="border-t-2 w-full inline" />
