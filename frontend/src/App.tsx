@@ -1,8 +1,8 @@
 import Home from "./pages/home/Home";
-import Login from "./pages/home/authentication/Login";
+import Login from "./pages/authentication/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./utils/PrivateRoutes";
-import Register from "./pages/home/authentication/Register";
+import Register from "./pages/authentication/Register";
 
 function App() {
   return (
