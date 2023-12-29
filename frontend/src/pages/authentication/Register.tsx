@@ -36,16 +36,14 @@ const Register = () => {
             </form>
           </div>
         </div>
-        <div className="border-2 mt-3 py-5">
-          <p className="text-sm text-slate-600 text-center">
-            Have an account?{" "}
-            <Link
-              to="/login"
-              className="text-sky-500 font-semibold cursor-pointer"
-            >
-              Log in
-            </Link>
-          </p>
+        <div className="flex justify-center gap-1 text-sm border-2 mt-3 py-5">
+          <p>Have an account?</p>
+          <Link
+            to="/login"
+            className="text-sky-500 font-semibold cursor-pointer"
+          >
+            Log in
+          </Link>
         </div>
       </div>
     </div>
