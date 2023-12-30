@@ -1,0 +1,10 @@
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../config/firebase";
+import { Navigate, Outlet } from "react-router-dom";
+
+const AuthenticationRoutes = () => {
+  const [user] = useAuthState(auth);
+  return !user ? <Outlet /> : <Navigate to="/" />;
+};
+
+export default AuthenticationRoutes;

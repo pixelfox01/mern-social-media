@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input as Inputs } from "@/components/ui/input";
 import { useForm, SubmitHandler } from "react-hook-form";
-import AppLogo from "@/utils/AppLogo";
+import AppLogo from "@/components/AppLogo";
 import { signInWithEmailAndPassword } from "firebase/auth/cordova";
 import { auth } from "@/config/firebase";
 import { useToast } from "@/components/ui/use-toast";

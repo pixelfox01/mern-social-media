@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AppLogo from "@/utils/AppLogo";
+import AppLogo from "@/components/AppLogo";
 import { IconBrandGoogleFilled } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
