@@ -21,6 +21,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredentials) => {
         toast({
+          variant: "success",
           title: "Success!",
           description: "Logged in successfully. Redirecting...",
         });
