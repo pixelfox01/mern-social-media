@@ -6,7 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout.tsx";
 import Login from "./pages/authentication/Login.tsx";
 import Register from "./pages/authentication/Register.tsx";
-import PrivateLayout from "./layouts/PrivateLayout.tsx";
+import ProtectedLayout from "./layouts/ProtectedLayout.tsx";
 import Home from "./pages/home/Home.tsx";
 import AuthLayout from "./layouts/AuthLayout.tsx";
 
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        element: <PrivateLayout />,
+        element: <ProtectedLayout />,
         children: [
           {
             path: "/",

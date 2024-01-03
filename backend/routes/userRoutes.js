@@ -1,21 +1,15 @@
 import express from "express";
+import { User } from "../models/userModel.js";
 import dotenv from "dotenv";
-import userRoutes from "./routes/userRoutes.js";
-import mongoose from "mongoose";
-import cors from "cors";
 import { Webhook } from "svix";
 import bodyParser from "body-parser";
 
 dotenv.config();
 
-const PORT = process.env.PORT;
-const DB_URL = process.env.DB_URL;
+const router = express.Router();
 
-const app = express();
-app.use(cors());
-
-app.post(
-  "/api/webhook",
+router.post(
+  "/webhook",
   bodyParser.raw({ type: "application/json" }),
   async (req, res) => {
     console.log("Webhook received");
@@ -30,9 +24,21 @@ app.post(
       // Handle the webhooks
       const eventType = evt.type;
       if (eventType === "user.created") {
-        console.log(`User ${id} was ${eventType}`);
-        console.log(attributes);
+        const user = {
+          name: attributes.first_name + " " + attributes.last_name || "",
+          bio: "",
+          image: attributes.image_url,
+          clerk_uid: id,
+          onboarding_complete: false,
+        };
+        const newUser = await User.create(user);
+        return res.status(201).json({
+          success: true,
+          message: "User created",
+          data: newUser,
+        });
       }
+
       res.status(200).json({
         success: true,
         message: "Webhook received",
@@ -46,22 +52,4 @@ app.post(
   }
 );
 
-// app.use(express.json());
-
-app.get("/", (req, res) => {
-  return res.status(200).send("Welcome to MERN social media app");
-});
-
-app.use("/users", userRoutes);
-
-mongoose
-  .connect(DB_URL)
-  .then(() => {
-    console.log("Connected to MongoDB");
-    app.listen(PORT, () => {
-      console.log(`Server listening on port ${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.log("Error connecting to MongoDB", err);
-  });
+export default router;

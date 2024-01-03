@@ -1,7 +1,7 @@
 import { useAuth } from "@clerk/clerk-react";
 import { Outlet, useNavigate } from "react-router-dom";
 
-const PrivateLayout = () => {
+const ProtectedLayout = () => {
   const { userId } = useAuth();
   const navigate = useNavigate();
 
@@ -12,4 +12,4 @@ const PrivateLayout = () => {
   return <Outlet />;
 };
 
-export default PrivateLayout;
+export default ProtectedLayout;

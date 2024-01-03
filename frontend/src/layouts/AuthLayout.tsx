@@ -9,7 +9,11 @@ const AuthLayout = () => {
     navigate("/");
   }
 
-  return <Outlet />;
+  return (
+    <div className="flex justify-center mt-20">
+      <Outlet />
+    </div>
+  );
 };
 
 export default AuthLayout;
